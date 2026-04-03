@@ -8,8 +8,10 @@ Components: animated wallpaper, top panel, bottom dock, app launcher, notificati
 
 ## Install Dependencies (FreeBSD)
 
+> **Note:** `pkg install` requires root. Switch to root first with `su root` (or prefix with `sudo` if configured).
+
 ```sh
-# Core DE runtime
+# Core DE runtime  (run as root)
 pkg install \
   python311 \
   py311-gobject3 \
@@ -32,19 +34,22 @@ pkg install thunar firefox thunderbird vlc
 
 ## Run the Shell
 
+> **Note:** `pkg install python311` installs the binary as `python3.11` on FreeBSD —
+> there is no `python3` symlink by default. Use `python3.11` directly as shown below.
+
 ```sh
 # Start an X session first (or add to ~/.xinitrc)
 startx
 
-# In your X session:
+# In your X session — cd into the project directory first:
 cd /path/to/novabsd-de
-python3 nova_shell.py
+python3.11 nova_shell.py
 ```
 
 ### Or set as default session in ~/.xinitrc:
 ```sh
 #!/bin/sh
-exec python3 /path/to/novabsd-de/nova_shell.py
+exec python3.11 /path/to/novabsd-de/nova_shell.py
 ```
 
 ---
