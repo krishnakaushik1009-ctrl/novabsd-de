@@ -20,7 +20,6 @@ from gi.repository import Gtk, Gdk, GLib
 
 from nova.panel    import NovaPanel
 from nova.dock     import NovaDock
-from nova.wallpaper import NovaWallpaper
 from nova.launcher  import NovaLauncher
 from nova.notifier  import NovaNotifier
 from nova.theme     import apply_theme
@@ -36,14 +35,12 @@ class NovaShell:
         apply_theme()
 
         # Core components
-        self.wallpaper = NovaWallpaper()
         self.notifier  = NovaNotifier()
         self.launcher  = NovaLauncher(self.notifier)
         self.panel     = NovaPanel(self.launcher, self.notifier)
         self.dock      = NovaDock(self.launcher, self.notifier)
 
         # Show everything
-        self.wallpaper.show_all()
         self.panel.show_all()
         self.dock.show_all()
 
