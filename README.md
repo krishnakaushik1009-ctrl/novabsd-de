@@ -23,8 +23,9 @@ pkg install \
   xwininfo \
   xprop
 
-# Optional (apps the dock will launch)
-pkg install thunar firefox thunderbird vlc xfce4-settings-manager
+# Optional — apps the dock will launch (install what you need)
+pkg install thunar firefox thunderbird vlc
+# NovaBSD has its own settings UI; xfce4 is NOT required
 ```
 
 ---
@@ -57,10 +58,10 @@ novabsd-de/
 │   ├── __init__.py
 │   ├── theme.py           ← GTK CSS (all colors, fonts, styling)
 │   ├── panel.py           ← Top bar (logo, app label, clock, battery, wifi)
-│   ├── dock.py            ← Bottom dock (icons, date/time, running indicators)
-│   ├── wallpaper.py       ← Animated Cairo arc wallpaper
-│   ├── launcher.py        ← App launcher grid overlay
-│   └── notifier.py        ← Toast notifications (top-right stack)
+│   ├── dock.py            ← Bottom dock (pinned apps, date/time)
+│   ├── wallpaper.py       ← Animated Cairo arc wallpaper with star field
+│   ├── launcher.py        ← Searchable full-screen app launcher overlay
+│   └── notifier.py        ← Toast notifications (top-right, auto-dismiss)
 └── README.md
 ```
 
