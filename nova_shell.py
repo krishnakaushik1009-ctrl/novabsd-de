@@ -4,7 +4,7 @@ NovaBSD Shell — Main Entry Point
 FreeBSD Desktop Environment Prototype
 
 Run: python3 nova_shell.py
-Deps (FreeBSD): pkg install py311-gobject3 gtk3 py311-cairo xwininfo
+Deps (FreeBSD): pkg install py311-pygobject gtk3 py311-cairo xwininfo
 """
 
 import sys

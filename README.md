@@ -14,7 +14,7 @@ Components: animated wallpaper, top panel, bottom dock, app launcher, notificati
 # Core DE runtime  (run as root)
 pkg install \
   python311 \
-  py311-gobject3 \
+  py311-pygobject \
   py311-cairo \
   gtk3 \
   glib \
