@@ -12,7 +12,7 @@ from gi.repository import Gtk, Gdk
 # ---------------------------------------------------------------------------
 # CSS — edit colors/fonts here to retheme the whole DE
 # ---------------------------------------------------------------------------
-NOVA_CSS = b"""
+NOVA_CSS = """
 /* ── Global reset ─────────────────────────────────────────────────────── */
 * {
     font-family: "Inter", "Cantarell", "DejaVu Sans", sans-serif;
@@ -155,7 +155,7 @@ NOVA_CSS = b"""
 def apply_theme() -> None:
     """Load NOVA_CSS into the default GTK screen provider."""
     provider = Gtk.CssProvider()
-    provider.load_from_data(NOVA_CSS)
+    provider.load_from_data(NOVA_CSS.encode("utf-8"))
     Gtk.StyleContext.add_provider_for_screen(
         Gdk.Screen.get_default(),
         provider,
