@@ -44,7 +44,7 @@ class NovaWallpaper(Gtk.Window):
         self.set_decorated(False)
         self.set_skip_taskbar_hint(True)
         self.set_skip_pager_hint(True)
-        self.keep_below(True)
+        self.set_keep_below(True)
         self.set_visual(screen.get_rgba_visual() or screen.get_system_visual())
 
         self.connect("draw", self._on_draw)

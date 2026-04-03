@@ -138,7 +138,10 @@ class NovaPanel(Gtk.Window):
     def _on_active_window_changed(self, screen, _param):
         win = screen.get_active_window()
         if win:
-            title = win.get_utf8_property("_NET_WM_NAME", "UTF8_STRING")
+            try:
+                title = win.get_utf8_property("_NET_WM_NAME", "UTF8_STRING")
+            except Exception:
+                title = None
             if title:
                 short = (title[:28] + "…") if len(title) > 28 else title
                 self._app_title.set_text(short)

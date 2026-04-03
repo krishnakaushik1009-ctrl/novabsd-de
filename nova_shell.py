@@ -16,13 +16,14 @@ gi.require_version("Gtk", "3.0")
 gi.require_version("Gdk", "3.0")
 gi.require_version("GdkX11", "3.0")
 
-from gi.repository import Gtk, Gdk, GLib
+from gi.repository import Gtk, Gdk, GLib, GdkX11  # noqa: F401  (GdkX11 registers X11 window types)
 
 from nova.panel    import NovaPanel
 from nova.dock     import NovaDock
 from nova.launcher  import NovaLauncher
 from nova.notifier  import NovaNotifier
 from nova.theme     import apply_theme
+from nova.wallpaper import NovaWallpaper
 
 
 class NovaShell:
@@ -35,12 +36,14 @@ class NovaShell:
         apply_theme()
 
         # Core components
+        self.wallpaper = NovaWallpaper()
         self.notifier  = NovaNotifier()
         self.launcher  = NovaLauncher(self.notifier)
         self.panel     = NovaPanel(self.launcher, self.notifier)
         self.dock      = NovaDock(self.launcher, self.notifier)
 
         # Show everything
+        self.wallpaper.show_all()
         self.panel.show_all()
         self.dock.show_all()
 

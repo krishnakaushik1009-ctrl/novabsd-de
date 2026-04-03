@@ -152,7 +152,7 @@ class NovaLauncher(Gtk.Window):
         inner = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=4)
         inner.set_halign(Gtk.Align.CENTER)
 
-        icon_lbl = Gtk.Label(label=emoji)
+        icon_lbl = Gtk.Label()
         icon_lbl.set_markup(
             f'<span font="{ICON_FONT_SIZE}">{emoji}</span>'
         )
